@@ -1,0 +1,674 @@
+package com.rule
+
+import com.javainuse.model.Person
+
+rule "No1"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "moderate", cilj == "gain");
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.1*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.55*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.55*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.55*0.2/9);
+		
+	end
+	
+rule "No2"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.1*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.375*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.375*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.375*0.2/9);
+		
+	end
+	
+rule "No3"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.1*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.2*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.2*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.2*0.2/9);
+		
+	end
+
+rule "No4"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "very_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.1*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.725*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.725*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.725*0.2/9);
+		
+	end
+	
+rule "No5"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.1*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.9*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.9*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.1*1.9*0.2/9);
+		
+	end
+
+//zensko, maintenance
+rule "No6"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2*0.3/9);
+		
+	end
+	
+rule "No7"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.375*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.375*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.375*0.3/9);
+		
+	end
+	
+rule "No8"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "moderate", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.55*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.55*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.55*0.3/9);
+		
+	end
+	
+rule "No9"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "very_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.725*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.725*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.725*0.3/9);
+		
+	end
+	
+rule "No10"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.9*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.9*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.9*0.3/9);
+		
+	end
+	
+//zensko, cut
+rule "No11"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*0.9*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.2*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.2*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.2*0.35/9);
+		
+	end
+	
+rule "No12"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*0.9*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.375*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.375*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.375*0.35/9);
+		
+	end
+	
+rule "No13"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "moderate", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*0.9*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.55*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.55*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.55*0.35/9);
+		
+	end
+	
+rule "No14"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "very_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*0.9*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.725*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.725*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.725*0.35/9);
+		
+	end
+	
+rule "No15"
+	when 
+		p : Person(pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*0.9*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.9*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.9*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*0.9*1.9*0.35/9);
+		
+	end
+	
+//musko, gain
+rule "No16"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "sedentary", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.1*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.2*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.2*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.2*0.2/9);
+		
+	end
+
+rule "No17"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "lightly_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.1*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.375*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.375*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.375*0.2/9);
+		
+	end
+
+rule "No18"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "moderate", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-+5)*1.1*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.55*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.55*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.55*0.2/9);
+		
+	end
+	
+rule "No19"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "very_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.1*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.725*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.725*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.725*0.2/9);
+		
+	end
+	
+rule "No20"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "extra_active", cilj == "gain")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.1*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.9*0.5/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.9*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.1*1.9*0.2/9);
+		
+	end
+	
+//musko, maintenance
+rule "No21"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "sedentary", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.2*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.2*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.2*0.3/9);
+		
+	end
+
+rule "No22"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "lightly_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.375*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.375*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.375*0.3/9);
+		
+	end
+
+rule "No23"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "moderate", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-+5)*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.55*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.55*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.55*0.3/9);
+		
+	end
+	
+rule "No24"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "very_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.725*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.725*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.725*0.3/9);
+		
+	end
+	
+rule "No25"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "extra_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.9*0.4/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.9*0.3/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*1.9*0.3/9);
+		
+	end
+
+//musko, cut
+rule "No26"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "sedentary", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*0.9*1.2 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.2*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.2*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.2*0.35/9);
+		
+	end
+
+rule "No27"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "lightly_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*0.9*1.375 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.375*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.375*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.375*0.35/9);
+		
+	end
+
+rule "No28"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "moderate", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-+5)*0.9*1.55 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.55*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.55*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.55*0.35/9);
+		
+	end
+	
+rule "No29"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "very_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*0.9*1.725 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.725*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.725*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.725*0.35/9);
+		
+	end
+	
+rule "No30"
+	when 
+		p : Person(pol=="musko", nivo_aktivnosi == "extra_active", cilj == "cut")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()+5)*0.9*1.9 );
+p.setCarbs ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.9*0.20/4 );
+p.setProtein ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.9*0.45/4);
+p.setFat ((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()+5)*0.9*1.9*0.35/9);
+		
+	end
+	
+//zene u drugom stanju koje su u drugom trimestru treba da unose 300-350kcal vise nego inace, mi smo dodali 325
+	
+rule "No31" salience -10
+lock-on-active
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325 )*1.1*0.2/9);
+		
+	end
+	
+rule "No32" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +325 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +325 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +325 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +325 )*1.1*0.2/9);
+		
+	end
+
+rule "No33" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "gain");
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325 )*1.1*0.2/9);
+		
+	end
+
+rule "No34" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +325 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +325 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +325 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +325 )*1.1*0.2/9);
+		
+	end
+	
+rule "No35" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +325 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +325 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +325 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325 )*1.9*0.2/9);
+		
+	end
+	
+rule "No36" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +325);
+p.setCarbs (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+325)*0.4/4 );
+p.setProtein (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+325)*0.3/4);
+p.setFat (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+325)*0.3/9);
+		
+	end
+	
+rule "No37" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.3/9);
+		
+	end
+	
+rule "No38" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +325)*0.3/9);
+		
+	end
+	
+rule "No39" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.3/9);
+		
+	end
+	
+rule "No40" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.3/9);
+		
+	end
+	
+//zensko, cut
+rule "No41" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 325)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 325)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 325)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 325)*0.9*0.35/9);
+		
+	end
+	
+rule "No42" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 325)*0.9*0.35/9);
+		
+	end
+	
+rule "No43" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 325)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 325)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 325)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 325)*0.9*0.35/9);
+		
+	end
+	
+rule "No44" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 325)*0.9*0.35/9);
+		
+	end
+	
+rule "No45" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Drugi", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 325)*0.9*0.35/9);
+		
+	end
+	
+rule "No46" salience -10
+lock-on-active
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500 )*1.1*0.2/9);
+		
+	end
+	
+rule "No47" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +500 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +500 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +500 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 +500 )*1.1*0.2/9);
+		
+	end
+
+rule "No48" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "gain");
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500 )*1.1*0.2/9);
+		
+	end
+
+rule "No49" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +500 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +500 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +500 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 +500 )*1.1*0.2/9);
+		
+	end
+	
+rule "No50" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "gain")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +500 )*1.1);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +500 )*1.1*0.5/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 +500 )*1.1*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500 )*1.9*0.2/9);
+		
+	end
+	
+rule "No51" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 +500);
+p.setCarbs (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+500)*0.4/4 );
+p.setProtein (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+500)*0.3/4);
+p.setFat (((10* p.getTezina()+6.25* p.getVisina()-5* p.getStarost()-161)*1.2+500)*0.3/9);
+		
+	end
+	
+rule "No52" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.3/9);
+		
+	end
+	
+rule "No53" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 +500)*0.3/9);
+		
+	end
+	
+rule "No54" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.3/9);
+		
+	end
+	
+rule "No55" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "maintenance")
+	then
+p.setKcal( (10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.4/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.3/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.3/9);
+		
+	end
+	
+//zensko, cut
+rule "No56" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "sedentary", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 500)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 500)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 500)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.2 + 500)*0.9*0.35/9);
+		
+	end
+	
+rule "No57" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "lightly_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.375 + 500)*0.9*0.35/9);
+		
+	end
+	
+rule "No58" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "moderate", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 500)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 500)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 500)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.55 + 500)*0.9*0.35/9);
+		
+	end
+	
+rule "No59" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "very_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.725 + 500)*0.9*0.35/9);
+		
+	end
+	
+rule "No60" salience -10
+	when 
+		p : Person(trudnoca == "Da", trimestar=="Treci", pol=="zensko", nivo_aktivnosi == "extra_active", cilj == "cut")
+	then
+p.setKcal( ((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.9);
+p.setCarbs (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.9*0.20/4 );
+p.setProtein (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.9*0.45/4);
+p.setFat (((10*p.getTezina()+6.25*p.getVisina()-5*p.getStarost()-161)*1.9 + 500)*0.9*0.35/9);
+		
+	end
